@@ -158,7 +158,8 @@ const myQuotes = [
     {
         quote: "I nutted on a cookie [picture of nut on said cookie] ", author: "illiusion"
     },
-    { quote: "i wanna ride it tho🔥", author: "conspiracy"}
+    { quote: "i wanna ride it tho🔥", author: "conspiracy"},
+    { quote: "my hb found his first femboy and don know what to do", author: "gio" }
 ];
 
 // --- CONFIGURATION - REPLACE THESE VALUES ---
