@@ -1,165 +1,34 @@
 // --- START: YOUR CUSTOM QUOTES ---
-const myQuotes = [
-    {
-        quote: "either this nigga is ageplaying or this nigga clipfarming for of",
-        author: "conspiracy"
-    },
-    {
-        quote: "went from exploiting fort to exploiting minors",
-        author: "conspiracy"
-    },
-    {
-        quote: "smoked him in the wpm test in: french, german, arabic, chinese, english",
-        author: "conspiracy"
-    },
-    {
-        quote: "im gonna charlie kirk my mother",
-        author: "conspiracy"
-    },
-    {
-        quote: "honestly its a miracle i haven't been leaked yet 🥀",
-        author: "conspiracy"
-    },
-    {
-        quote: "bro did i tell you i got 10 relationships at once 💀",
-        author: "conspiracy"
-    },
-    {
-        quote: "in the wisee words of thug, 'we chop off your penis you keeping your head'🥰 no pressure",
-        author: "conspiracy"
-    },
-    {
-        quote: "how does one achieve sexual satisfaction via watching your significant other cheat on u",
-        author: "conspiracy"
-    },
-    {
-        quote: "i cummed in the charging port",
-        author: "conspiracy"
-    },
-    {
-        quote: "is it really even gay if they don't have a dih",
-        author: "conspiracy"
-    },
-    {
-        quote: "today before sleep i hallucinated putting my phone to charge",
-        author: "conspiracy"
-    },
-    {
-        quote: "imma lick ur shi till u squirt on my face",
-        author: "conspiracy"
-    },
-    {
-        quote: "nop the bugcheck ud pg bypass",
-        author: "conspiracy"
-    },
-    {
-        quote: "ok i removed ppl off system, set the kernels integrity to low 🔥adding everyone to kernel allow priveleges, can i openprocess pid 4 now 😼 ",
-        author: "conspiracy"
-    },
-    {
-        quote: "steal em and cum inside her panties",
-        author: "conspiracy"
-    },
-    {
-        quote: "doggy in the shower atleast ONCE",
-        author: "conspiracy"
-    },
-    {
-        quote: "or the .44 I carry incase a black gets too close",
-        author: "conspiracy"
-    },
-    {
-        quote: "but damn ur big so ill overlook the red flag that ur black..😍",
-        author: "conspiracy"
-    },
-    {
-        quote: "HOW AM I FAILING TO FIND A CALL IN AN ENTIRE DRIVER",
-        author: "conspiracy"
-    },
-    {
-        quote: "does me giving u brain count as that?",
-        author: "conspiracy"
-    },
-    {
-        quote: "WINDEFEND IS BLOCKING MY DRIVER FROM RUNNING WHILE I HAVE A KERNEL DEBUGGER ATTACHED WHAT THE FUCK",
-        author: "conspiracy"
-    },
-    {
-        quote: "shes 10 🗣️",
-        author: "conspiracy"
-    },
-    {
-        quote: "im gonna behead that skank",
-        author: "conspiracy"
-    },
-    {
-        quote: "I think I can get another victim",
-        author: "conspiracy"
-    },
-    {
-        quote: "im gonna peg the NEAREST minor till he cums ",
-        author: "conspiracy"
-    },
-    {
-        quote: "bout to cum inside a kid",
-        author: "conspiracy"
-    },
-    {
-        quote: "this is what happenss when u dont update vixen u nigger",
-        author: "illiusion"
-    },
-    {
-        quote: "this kids cheating bro i can't wallbang him with my pistol from across the map",
-        author: "conspiracy"
-    },
-    {
-        quote: "the real challenge is trying not to get banned off of github with every commit",
-        author: "ellii"
-    },
-    {
-        quote: "big ahh forehead on the girl on the right",
-        author: "illusion"
-    },
-    {
-        quote: "ariana grande really let herself go bro",
-        author: "conspiracy"
-    },
-    {
-        quote: "if i get recommended netspend 1 more time im gonna fuck my dog",
-        author: "conspiracy"
-    },
-    {
-        quote: "age is just a excuse not to breed thats why you should do it anyways",
-        author: "conspiracy"
-    },
-    {
-        quote: "Sometimes the right way isint always the right way sometimes you gotta take the wrong way nigga",
-        author: "brainz"
-    },
-    {
-        quote: "theres a difference between saying shit about loving kids and squirting from your pet cat licking u",
-        author: "conspiracy"
-    },
-    {
-        quote: "Hey nigger",
-        author: "Robin"
-    },
-    {
-        quote: "Free percocet? Hell yeah hand it over",
-        author: "Nicole"
-    },
-    {
-        quote: "rare occurence me having straight porn gifs ??",
-        author: "conspiracy"
-    },
-    {
-        quote: "i broke backtrack", author:"conspiracy"
-    }, 
-    {
-        quote: "I nutted on a cookie [picture of nut on said cookie] ", author: "illiusion"
-    },
-    { quote: "i wanna ride it tho🔥", author: "conspiracy"},
-    { quote: "my hb found his first femboy and don know what to do", author: "gio" }
+async function loadQuotes() {
+  try {
+    // Load the text file
+    const response = await fetch('quotes.txt');
+    const text = await response.text();
+
+    // Split by newlines and clean up
+    const lines = text.split('\n').filter(line => line.trim() !== '');
+
+    // Convert each line into a { quote, author } object
+    const myQuotes = lines.map(line => {
+      const [quote, author] = line.split(' - ');
+      return {
+        quote: quote?.trim(),
+        author: author?.trim() || 'Unknown'
+      };
+    });
+
+    console.log(myQuotes); // See the result in the console
+    return myQuotes;
+
+  } catch (error) {
+    console.error('Error loading quotes:', error);
+  }
+}
+
+loadQuotes();
+
+const myQuotes = [ // fallback
+    {quote:"I will now go back to my cave and continue pulling stuff, I just had to do something else for a while. Some people relax with a nice drink by the pool, I relax by playing around with inline asm.", author:"linus torvavlds "}
 ];
 
 // --- CONFIGURATION - REPLACE THESE VALUES ---
