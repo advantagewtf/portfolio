@@ -3,18 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading...</title>
-    <style>body,html{margin:0;padding:0;height:100%}</style>
+    <title>.</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<script>
-(function() {
-    var enc = "PCFET0NUWVBFIGh0bWw+IDxodG1sIGxhbmc9ZW4gPjxtZXRhIGNoYXJzZXQ9VVRGLTggPjxtZXRhIG5hbWU9dmlld3BvcnQgIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xIj48dGl0bGU+TG9hZGluZy4uLjwvdGl0bGU+PHN0eWxlPmJvZHksaHRtbHttYXJnaW46MDtwYWRkaW5nOjA7aGVpZ2h0OjEwMCV9PC9zdHlsZT48c2NyaXB0PiAoZnVuY3Rpb24oKXt2YXIgYj0iSDRzSUFQUUJGR2tDLzdOUmRQRjNEb2tNY0ZYSUtNbk5zUU1BS3lrTlVROEFBQUE9IixhPWF0b2IoYiksbD1hLmxlbmd0aCx1PW5ldyBVaW50OEFycmF5KGwpO2Zvcih2YXIgaT0wO2k8bDtpKyspdVtpXT1hLmNoYXJDb2RlQXQoaSk7bmV3IFJlc3BvbnNlKG5ldyBCbG9iKFt1XSkuc3RyZWFtKCkucGlwZVRocm91Z2gobmV3IERlY29tcHJlc3Npb25TdHJlYW0oImd6aXAiKSkpLnRleHQoKS50aGVuKGg9Pntkb2N1bWVudC5vcGVuKCk7ZG9jdW1lbnQud3JpdGUoaCk7ZG9jdW1lbnQuY2xvc2UoKX0pLmNhdGNoKGU9Pntkb2N1bWVudC5ib2R5LmlubmVySFRNTD0iPHByZT4iK2UrIjwvcHJlPiJ9KX0pKCk7Cjwvc2NyaXB0Pg==";
-    var dec = atob(enc);
-    document.open();
-    document.write(dec);
-    document.close();
-})();
-</script>
+
+<body onload="initMedia()">
+
+    <div id="start-screen">
+        <div id="start-text"></div>
+    </div>
+
+    <div class="container">
+        <video id="background" autoplay loop muted playsinline webkit-playsinline><source src="assets/background.mp4" type="video/mp4"></video>
+        
+        <div class="glitch-overlay"></div>
+
+        <div id="profile-block">
+            <div class="profile-header">
+                <div class="profile-container">
+                    <img src="assets/pfp.jpg" alt="Profile" class="profile-picture">
+                </div>
+                <div class="profile-info">
+                    <div class="name-and-badges">
+                        <div class="name-container"><div id="profile-name">ellii</div></div>
+                      
+                    </div>
+                    <div id="profile-bio"></div>
+                    <div class="playlist-button-wrapper">
+                        <div id="discord-activity">
+                            <div id="activity-carousel-wrapper">
+                                <div class="activity-slide"><p style="color: rgba(255, 255, 255, 0.7); font-size: 14px; margin: 0;">Loading Discord activity...</p></div>
+                            </div>
+                        </div>
+                        
+            
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="bio-separator"></div>
+
+            
+        </div>
+        <div class="controls-dock">
+            <div class="volume-control">
+                <svg id="volume-icon" class="volume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg><input id="volume-slider" class="slider" type="range" min="0" max="1" step="0.01" value="0.3"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <audio id="track-preview-player"></audio>
+    <script src="script.js"></script>
+
 </body>
 </html>
