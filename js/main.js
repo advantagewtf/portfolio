@@ -3,7 +3,7 @@
    ------------------------- */
 const DISCORD_ID = '1372459254136705064';
 const LANYARD_API = `https://api.lanyard.rest/v1/users/${DISCORD_ID}`;
-const QUOTES_TXT = 'https://advantagewtf.github.io/api/quotes.txt';
+const QUOTES_TXT = 'https://moonlightrblx.github.io/api/quotes.txt';
 const POLL_INTERVAL = 15000;
 
 /* -------------------------
@@ -212,4 +212,5 @@ function updateProfileUI(data) {
 /* Space to shuffle quote */
 document.body.addEventListener('keydown', e => {
   if (e.code === 'Space') { e.preventDefault(); showRandomQuote(); }
+
 });
