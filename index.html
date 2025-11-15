@@ -1,65 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>.</title>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio — Discord Presence & Quotes</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
 </head>
 
-<body onload="initMedia()">
-
-    <div id="start-screen">
-        <div id="start-text"></div>
-    </div>
-
-    <div class="container">
-        <video id="background" autoplay loop muted playsinline webkit-playsinline><source src="assets/background.mp4" type="video/mp4"></video>
-        
-        <div class="glitch-overlay"></div>
-
-        <div id="profile-block">
-            <div class="profile-header">
-                <div class="profile-container">
-                    <img src="assets/images/profile.jpg" alt="Profile" class="profile-picture">
-                </div>
-                <div class="profile-info">
-                    <div class="name-and-badges">
-                        <div class="name-container"><div id="profile-name">ellii</div></div>
-                      
-                    </div>
-                    <div id="profile-bio"></div>
-                    <div class="playlist-button-wrapper">
-                        <div id="discord-activity">
-                            <div id="activity-carousel-wrapper">
-                                <div class="activity-slide"><p style="color: rgba(255, 255, 255, 0.7); font-size: 14px; margin: 0;">Loading Discord activity...</p></div>
-                            </div>
+<body>
+    <div class="wrap">
+        <div class="card">
+            <!-- Left: Profile -->
+            <div class="panel profile" id="profilePanel">
+                <div class="pfp-wrap">
+                    <div class="pfp" id="pfp"><img src="" alt="avatar" /></div>
+                    <div class="name">
+                        <div class="username" id="displayName">Loading...</div>
+                        <div class="discr" id="tagline">Discord ID: 1372459254136705064</div>
+                        <div class="status-row">
+                            <div id="statusDot" class="status-dot" style="background:gray"></div>
+                            <div id="statusText" class="status-label">Fetching status…</div>
+                            <div id="statusSince" class="muted" style="margin-left:8px; font-size:0.85rem"></div>
                         </div>
-                        
-            
-                        
                     </div>
+                </div>
+                <div id="activityBlock" style="margin-top:12px">
+                    <!-- Spotify or activity with timestamps -->
                 </div>
             </div>
 
-            <div class="bio-separator"></div>
+            <!-- Right: Main -->
+            <div class="panel main">
+                <div class="hero">
+                    <h1 class="headline">My Portfolio</h1>
+                    <p class="sub">I am <strong>ellii</strong>, a female developer in the <span
+                            class="highlight">cheating &amp; reverse engineering</span> community.</p>
 
-            
+
+                    <div class="quote" id="quoteBox" aria-live="polite">
+                        <div class="q-mark">“</div>
+                        <div class="q-text" id="quoteText">Loading quotes…</div>
+                    </div>
+                    <!-- <div style="height:12px"></div> -->
+                    <div class="meta-row" id="metaRow">
+                        <div id="lastUpdated" class="muted">Last updated: —</div>
+                        <div id="quoteCount" class="muted">Quotes: —</div>
+                    </div>
+                </div>
+
+                <div class="panel" style="display:flex; flex-direction:column; gap:10px;">
+                    <div style="font-weight:700">About</div>
+                    <div class="muted">
+                        <div class="details">
+                            <h4>Core Skills</h4>
+                            <ul>
+                                <li><strong>Languages:</strong> C++, C#, Python, Rust, Assembly (x86/x64), Lua</li>
+                                <li><strong>Reverse Engineering:</strong> IDA Pro, x64dbg, Cheat Engine</li>
+                                <li><strong>Game Hacking:</strong> Internal &amp; external cheats, kernel drivers</li>
+                                <li><strong>Platforms:</strong> Windows (user &amp; kernel mode), Linux (basic),
+                                    Unity/Unreal Engine</li>
+                            </ul>
+
+                            <h2>Community &amp; Presence</h2>
+                            <p>Active on private
+                                Discord circles. Known for optimization packs (~1K users), and <em>zero bans</em> on
+                                paid products.</p>
+
+                            <!-- <p class="tagline">I don’t just break games — I <span class="blink">rewrite the
+                                    rules</span>.</p> -->
+                        </div>
+
+                    </div>
+                   
+
+                </div>
+                 <div style="height:-10px"></div>
+                <!-- ==== GITHUB STATS ==== -->
+<div class="github-stats" style="margin-top:24px; display:flex; flex-direction:column; align-items:center; gap:16px;">
+
+  <div style="display:flex; gap:12px; width:100%; justify-content:center; flex-wrap:wrap;">
+    <img src="https://github-readme-stats.vercel.app/api?username=moonlightrblx&show_icons=true&theme=tokyonight&hide_border=true"
+         alt="GitHub Stats"
+         style="width:48%; min-width:280px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.3);"/>
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=moonlightrblx&theme=tokyonight&hide_border=true"
+         alt="GitHub Streak"
+         style="width:48%; min-width:280px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.3);"/>
+  </div>
+</div>
+                <footer>website designed by ellii</footer>
+            </div>
         </div>
-        <div class="controls-dock">
-            <div class="volume-control">
-                <svg id="volume-icon" class="volume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg><input id="volume-slider" class="slider" type="range" min="0" max="1" step="0.01" value="0.3"></div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <audio id="track-preview-player"></audio>
-    <script src="script.js"></script>
-
+    <script src="js/main.js"></script>
 </body>
+
 </html>
